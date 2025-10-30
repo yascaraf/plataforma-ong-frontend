@@ -1,0 +1,117 @@
+/*
+ * LAYOUT: HEADER E NAVEGAÇÃO
+ * Estiliza o cabeçalho e o menu responsivo (hambúrguer).
+ */
+
+.main-header {
+    background: var(--color-background);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-2) 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+}
+.logo a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+/* Regra principal, sem cor, para todos os links */
+.main-nav a {
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    padding: var(--spacing-1) 0;
+    position: relative;
+}
+
+/* Aplica a cor escura APENAS em links que NÃO são botões */
+.main-nav a:not(.btn) {
+    color: var(--color-text);
+}
+
+/* Ajusta o padding do botão "Participe" para ficar mais proporcional */
+.main-nav a.btn {
+    padding: var(--spacing-1) var(--spacing-2); /* 8px vertical, 16px horizontal */
+    line-height: 1.5; /* Garante alinhamento vertical do texto */
+}
+
+/* Remove o efeito de sublinhado do botão */
+.main-nav a.btn:hover::after,
+.main-nav a.btn.active::after {
+    content: none;
+}
+
+/* Efeito de sublinhado no hover/active */
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+/* * Navegação Mobile (Menu Hambúrguer) 
+
+ */
+
+.menu-toggle,
+.menu-icon {
+    display: none; /* Escondidos no desktop */
+}
+
+/* Breakpoint para mobile (ex: md) */
+@media (max-width: 767px) {
+    .main-header .container {
+        flex-wrap: wrap; /* Permite que o menu quebre a linha */
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        user-select: none; /* Impede seleção de texto */
+    }
+
+    .main-nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--spacing-2) 0;
+    }
+
+    /* O checkbox quando checado, mostra o nav */
+    .menu-toggle:checked ~ .main-nav {
+        max-height: 500px; /* Altura suficiente para o menu */
+    }
+    
+    /* O botão "Participe" vira um botão de bloco no mobile */
+    .main-nav .btn {
+        width: 100%;
+        text-align: center;
+        margin-top: var(--spacing-1);
+    }
+}

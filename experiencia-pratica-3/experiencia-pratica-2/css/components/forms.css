@@ -1,0 +1,81 @@
+/*
+ * COMPONENT: FORMS
+ * Estiliza o formulário de cadastro.
+ */
+
+.styled-form {
+    background: var(--color-background);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.styled-form fieldset {
+    border: none;
+    margin-bottom: var(--spacing-3);
+    /* O fieldset é um container para o .row */
+    display: contents; 
+}
+
+.styled-form legend {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-3);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: var(--spacing-1);
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-3);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-1);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: var(--spacing-1) var(--spacing-2);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+}
+
+.form-group input:invalid {
+    box-shadow: none;
+}
+
+.form-group input:invalid {
+    box-shadow: none;
+}
+
+
+.form-group .error-message {
+    color: var(--color-danger);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-1);
+    display: none; /* Começa escondido */
+}
+
+/* O JS adiciona esta classe para MOSTRAR o erro */
+.form-group.invalid .error-message {
+    display: block;
+}
+
+/* O JS adiciona esta classe para PINTAR A BORDA de vermelho */
+.form-group.invalid input {
+    border-color: var(--color-danger);
+}
+
+/* O JS adiciona esta classe para PINTAR A BORDA de verde */
+.form-group.valid input {
+    border-color: var(--color-success);
+}

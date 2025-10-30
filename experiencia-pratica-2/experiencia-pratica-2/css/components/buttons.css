@@ -1,0 +1,56 @@
+/*
+ * COMPONENT: BUTTONS
+ * Define os estilos para botões e seus estados.
+ */
+
+.btn {
+    display: inline-block;
+    padding: var(--spacing-1) var(--spacing-3);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+/* Botão Primário (Cor principal) */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+.btn-primary:hover {
+    background-color: #0056b3; /* Um tom mais escuro de azul */
+    color: var(--color-background);
+    text-decoration: none;
+}
+
+/* Botão Secundário (Cor secundária) */
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+.btn-secondary:hover {
+    background-color: #5a6268; /* Tom mais escuro */
+    color: var(--color-background);
+    text-decoration: none;
+}
+
+/* Estados de Foco (Acessibilidade) */
+.btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Estado Ativo (pressionado) */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Tamanho Grande */
+.btn-lg {
+    font-size: var(--font-size-md);
+    padding: var(--spacing-2) var(--spacing-4);
+}

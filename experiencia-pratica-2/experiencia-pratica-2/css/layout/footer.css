@@ -1,0 +1,12 @@
+/*
+ * LAYOUT: FOOTER
+ * Estiliza o rodapé da página.
+ */
+
+.main-footer {
+    background-color: var(--color-text);
+    color: var(--color-background);
+    padding: var(--spacing-4) 0;
+    margin-top: var(--spacing-5);
+    text-align: center;
+}

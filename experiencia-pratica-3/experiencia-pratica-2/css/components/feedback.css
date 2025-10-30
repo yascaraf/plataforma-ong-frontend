@@ -1,0 +1,34 @@
+/*
+ * COMPONENT: FEEDBACK (Alerts, Badges)
+ * Componentes de UI para dar feedback ao usuário.
+ */
+
+/* Badges (usados nos cards) */
+.badge {
+    display: inline-block;
+    padding: 0.3em 0.6em;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-1);
+}
+
+.badge.badge-primary { background-color: var(--color-primary); }
+.badge.badge-success { background-color: var(--color-success); }
+.badge.badge-warning { background-color: var(--color-warning); color: var(--color-text); }
+
+/* Alerts (usado na home) */
+.alert {
+    padding: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}

@@ -1,0 +1,92 @@
+/*
+ * LAYOUT: GRID
+ * Define o layout principal da página (CSS Grid) e
+ * o nosso sistema de 12 colunas (Flexbox).
+ */
+
+/* 1. Layout Principal (com CSS Grid) */
+/*
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+.main-header { grid-row: 1; }
+main { grid-row: 2; }
+.main-footer { grid-row: 3; }
+*/
+/* Comentado pois pode ser simples demais. O CSS Grid é 
+   mais usado em layouts complexos, como na hero-section */
+
+.hero-section {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-6) 0;
+}
+
+/* Aplicando CSS Grid no layout da hero-section */
+.hero-section .container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: 1 coluna */
+    gap: var(--spacing-4);
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+/* 2. Sistema de Grid de 12 Colunas (com Flexbox) */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Ajustado para --spacing-3 para um gutter maior */
+    margin: 0 calc(-1 * var(--spacing-3)); 
+}
+
+/* Todas as colunas têm padding */
+[class^="col-"] {
+    /* Ajustado para --spacing-3 para um gutter maior */
+    padding: 0 var(--spacing-3); 
+    width: 100%; /* Mobile-first: 100% por padrão */
+}
+
+/* * 3. BREAKPOINTS (Requisito: 5 breakpoints)
+ * Usaremos Flexbox para o grid de 12 colunas.
+ */
+
+/* sm (Small) - 576px */
+@media (min-width: 576px) {
+    /* estilos sm */
+}
+
+/* md (Medium) - 768px */
+@media (min-width: 768px) {
+    .hero-section .container {
+        grid-template-columns: 1fr 1fr; /* Duas colunas no desktop */
+        text-align: left;
+    }
+    .hero-content {
+        text-align: left;
+    }
+    
+    .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+
+/* lg (Large) - 992px */
+@media (min-width: 992px) {
+    .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-lg-4 { flex: 0 0 33.33%; max-width: 33.33%; }
+    .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* xl (Extra Large) - 1200px */
+@media (min-width: 1200px) {
+    /* estilos xl */
+}
+
+/* xxl (Extra Extra Large) - 1400px */
+@media (min-width: 1400px) {
+    /* estilos xxl */
+}
